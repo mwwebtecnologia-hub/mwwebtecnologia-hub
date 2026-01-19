@@ -12,6 +12,8 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
       }
       h1, h2, h3, h4 {
         font-family: 'Playfair Display', serif;
@@ -22,18 +24,34 @@
       .border-gold-soft { border-color: #D4C5B3; }
       .bg-gold-deep { background-color: #7A6652; }
       .hover-gold-deep:hover { background-color: #635343; }
+      
+      @keyframes bounce-slow {
+        0%, 100% { transform: translateY(-5%); }
+        50% { transform: translateY(0); }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 3s infinite ease-in-out;
+      }
+      
+      /* Garante que o conteúdo não fique escondido sob a header fixa */
+      html {
+        scroll-padding-top: 80px;
+      }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
-</head>
+    <script type="module" src="./index.tsx"></script>
+  </head>
   <body>
     <div id="root"></div>
   </body>
